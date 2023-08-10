@@ -1,5 +1,6 @@
 #include <fcntl.h> // open(), O_WRONLY, O_CREAT, O_APPEND
 #include <stddef.h> // NULL
+#include <stdint.h> // uint32_t
 #include <stdio.h> // printf(), perror()
 #include <stdlib.h> // malloc(), free(), exit()
 #include <string.h> // strncat(), strlen(), strcpy()
@@ -8,7 +9,7 @@
 
 void usage(char *prog_name, char *filename);
 void fatal(char *);
-void *ec_malloc(__uint32_t);
+void *ec_malloc(uint32_t);
 
 int main(int argc, char **argv)
 {
@@ -60,7 +61,7 @@ void fatal(char *message)
     exit(-1);
 }
 
-void *ec_malloc(__uint32_t size)
+void *ec_malloc(uint32_t size)
 {
     void *ptr;
     ptr = malloc(size);

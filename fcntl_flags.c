@@ -1,8 +1,9 @@
 #include <fcntl.h>
+#include <stdint.h>
 #include <stdio.h>
 
-void display_flags(char *, __uint32_t);
-void binary_print(__uint32_t);
+void display_flags(char *, uint32_t);
+void binary_print(uint32_t);
 
 int main(int argc, char **argv)
 {
@@ -52,7 +53,7 @@ int main(int argc, char **argv)
     printf("\n");
 }
 
-void display_flags(char *label, __uint32_t value)
+void display_flags(char *label, uint32_t value)
 {
     if (value == O_FSYNC || value == O_SYNC)
         printf("%s\t: %d\t:", label, value);
@@ -62,11 +63,11 @@ void display_flags(char *label, __uint32_t value)
     printf("\n");
 }
 
-void binary_print(__uint32_t value)
+void binary_print(uint32_t value)
 {
-    __uint32_t mask = 0xff000000;
-    __uint32_t shift = 256 * 256 * 256;
-    __uint32_t byte, byte_iterator, bit_iterator;
+    uint32_t mask = 0xff000000;
+    uint32_t shift = 256 * 256 * 256;
+    uint32_t byte, byte_iterator, bit_iterator;
 
     for (byte_iterator = 0; byte_iterator < 4; byte_iterator++) {
         byte = (value & mask) / shift;
