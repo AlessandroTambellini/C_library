@@ -1,8 +1,6 @@
 #include <stdio.h>
 
-// "\x1b[0m" vs "\e[m"
-#define RESET "\x1b[0m"
-#define END "\e[m"
+#define RESET "\e[m" // you can also use "\x1b[0m"
 
 #define BLACK "\x1B[30m"
 #define RED "\x1B[31m"
