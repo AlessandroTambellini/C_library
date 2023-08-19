@@ -5,6 +5,7 @@ C library for personal reference
 * system.c: bash commands to perform useful system calls
 * fcntl_flags.c: all the file descriptor flags
 * errorchecked_heap.c: self-explanatory filename
+* funcptr.c: function pointer
 * **game_of_chance.c**: game to show the usage of the other files + other stuff
 this is a multi-player game that writes to the /var directory.  
 Therefore you need to run the following commands:  
